@@ -51,74 +51,31 @@ body{
 .popup{
     display:none;
 }
-@media (max-width:767px){
-    .nav .nav__title{
-        display:none;
+.hiddenn{
+    opacity: 0;
+}
+.navlist {
+    display:flex;
+    max-height:58px;
+    align-items: center;
+    background-color: #F9F9F9;
+    &__item a{
+        color:#151515;
     }
-    .hamb__title{
-        display:contents;
+    // .navlist__item
+    &>*:not(:last-child){
+        margin-right:clamp(1.25rem,2.5vw,2.5rem);
     }
-    .cai{
-        display:none;
-    }
-    .hamb{
+    &__item {
         display:flex;
-        align-items:center;
-        justify-content: space-between;
-    }
-    .bar{
-        display:block;
-        width:30px;
-        height:1px;
-        margin:6px auto;
-        background-color: #6A983C;
-        transition: 0.2s linear;
-    }
-    .hamb__field{
-        padding:10px 0 10px 20px;
-        cursor:pointer;
-    }
-    .popup {
-        position:fixed;
-        top:42px;
-        left:-100%;
-        width:100%;
-        height:100%;
-        background-color:white;
-        z-index:600;
-        display:flex;
-        flex-direction: column;
-        transition: 0.3s linear;
-    }
-    .popup.open{
-        left:0;
-        
-    }
-    .popup .cai_items{
-        width:100%;
-        height:100%;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        padding:20px 0;
-        gap:10px;
-    }
-    .popup .cai_items>*:not(:last-child){
-        margin-right:0px;
-    }
-    .hamb__field.active .bar:nth-child(2){
-        opacity: 0;
-    }
-    .hamb__field.active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamb__field.active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    body.noscroll{
-        overflow: hidden;
+        // .navlist__item_text
+
+        &_text {
+            font-size:clamp(0.5rem,1.5vw,1rem);
+        }
     }
 }
+
 
 .nav {
     
@@ -187,24 +144,7 @@ body{
 		}
 	}
 }
-.navlist {
-    display:flex;
-    max-height:58px;
-    align-items: center;
-    background-color: #F9F9F9;
-    // .navlist__item
-    &>*:not(:last-child){
-        margin-right:clamp(1.25rem,2.5vw,2.5rem);
-    }
-    &__item {
-        display:flex;
-        // .navlist__item_text
 
-        &_text {
-            font-size:clamp(0.5rem,1.5vw,1rem);
-        }
-    }
-}
 .menuandbanner{
     display:flex;
 }
@@ -275,6 +215,7 @@ body{
             display: inline-block;
             border-radius: 0.75rem;
             padding: 3rem 2rem;
+            max-width:100%;
             background: url("../img/Banner.png");
         }
 
@@ -455,8 +396,86 @@ body{
             left: 50%;
 		}
 }
-
-
+@media (max-width:767px){
+    .nav .nav__title{
+        display:none;
+    }
+    .hamb__title{
+        display:contents;
+    }
+    .cai{
+        display:none;
+    }
+    .hamb{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+    }
+    .bar{
+        display:block;
+        width:30px;
+        height:1px;
+        margin:6px auto;
+        background-color: #6A983C;
+        transition: 0.2s linear;
+    }
+    .hamb__field{
+        padding:10px 0 10px 20px;
+        cursor:pointer;
+    }
+    .popup {
+        position:fixed;
+        top:42px;
+        left:-100%;
+        width:100%;
+        height:100%;
+        background-color:white;
+        z-index:600;
+        display:flex;
+        flex-direction: column;
+        transition: 0.3s linear;
+    }
+    .popup.open{
+        left:0;
+        
+    }
+    .popup .cai_items{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding:20px 0;
+        gap:10px;
+    }
+    .popup .cai_items>*:not(:last-child){
+        margin-right:0px;
+    }
+    .hamb__field.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamb__field.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamb__field.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    body.noscroll{
+        overflow: hidden;
+    }
+    .hiddenn{
+        opacity: 1;
+    }
+    .navlist{
+        display:none;
+    }
+    .mab{
+        margin-top:0px;
+    }
+    .mab .mab__categorymenu{
+        display:none;
+    }
+}
 
 
 
